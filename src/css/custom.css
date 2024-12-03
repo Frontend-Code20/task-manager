@@ -1,0 +1,26 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+#root{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.backgrd-gradient{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #108AB1, #073A4B);
+}
+.btn-outline-secondary:hover{
+  background-color: #06D7A0;
+}
+.custom-bg-secondary{
+  background-color: #B9E2F5 !important;
+}
+.custom-bg-primary{
+  background-color: #DCF0FA !important;
+}

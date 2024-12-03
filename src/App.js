@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Layout from "./components/layout";
+import { Route, Routes, BrowserRouter } from "react-router";
+import Content from "./components/content";
+import CreateTask from "./components/createTask";
+import CreateList from "./components/createList";
+import Authentication from "./components/authentication";
+import ViewTasks from "./components/viewTasks";
+import { BarProvider } from "./components/globalState";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/custom.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="login" element={<Authentication />} />
+        <Route element={<BarProvider><Layout /></BarProvider>}>
+          <Route index element={<Content />} />
+          <Route path="create" element={<CreateTask />} />
+          <Route path="create-list" element={<CreateList />} />
+          <Route path="tasks" element={<ViewTasks />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
